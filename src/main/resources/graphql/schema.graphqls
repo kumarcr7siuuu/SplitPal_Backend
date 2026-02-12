@@ -1,0 +1,81 @@
+type Query {
+    timeline(targetUserId: ID!): [TimelineChat]
+    dashboard(userNumber:String): DashboardScreen
+}
+
+type TimelineChat {
+    id: ID
+    total_amount: Int
+    owend_amount: Int
+    status: Boolean
+    group_name: String
+    group_id : ID
+    payed_by: ID
+    payer_phoneNumber: String
+    payer_name: String
+}
+type DashboardScreen{
+    FlatcardList:[FlatCard]
+    groupList:[Group]
+    individuals:[IndividualTransactionPeople]
+    recent_transaction:[RecentTransaction]
+}
+
+type FlatCard{
+    split_id:ID
+    group_name:String
+    Initiator_name:String
+    Amount:Int
+}
+
+
+type User {
+    id:String,
+    name:String!,
+    groups:[Group]!
+}
+
+type Group{
+    id:String,
+    name:String,
+}
+
+type splits{
+    id:String,
+    groupId:Group,
+    amount:Int,
+    paidBy:User,
+    owned:User
+}
+
+type IndividualTransactionPeople{
+    target_user:ID
+    target_user_name:String
+}
+
+type RecentTransaction{
+    payed_to_name:String
+    group_name:String
+    amount:Int
+    status:Status
+}
+
+enum Status{
+    DEBITED
+    CREDITED
+}
+
+type Transaction {
+    id: ID!
+    title: String!
+    amount: Float!
+    payer: User!
+    group: Group
+    splits: [Split!]!
+}
+
+type Split {
+    user: User!
+    amount: Float!
+    owed: Boolean!
+}

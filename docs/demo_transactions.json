@@ -1,0 +1,82 @@
+[
+  {
+    "group_id": {"$oid": "6986155bb39ff30610bcb11c"},
+    "userID": {"$oid": "698612d8b39ff30610bcb119"},
+    "amount": 500,
+    "transaction_created_at": {"$date": "2026-02-06T17:00:00.000Z"},
+    "description": "Dinner at restaurant",
+    "to": {
+      "name": "Restaurant",
+      "id": null,
+      "phoneNumber": "9999999999"
+    },
+    "involvedUser": [
+      {
+        "SplitAmout": 250,
+        "payed_by": {"$oid": "698612d8b39ff30610bcb119"},
+        "owedBy": {"$oid": "69863510fd3f7a8a0171e846"},
+        "status": false,
+        "settled_date": null
+      }
+    ],
+    "_class": "org.example.splitpalbackendv2.Model.transactionModel"
+  },
+  {
+    "group_id": {"$oid": "6986155bb39ff30610bcb11c"},
+    "userID": {"$oid": "69863510fd3f7a8a0171e846"},
+    "amount": 2000,
+    "transaction_created_at": {"$date": "2026-02-06T19:30:00.000Z"},
+    "description": "Hotel stay for 1 night",
+    "to": {
+      "name": "City Hotel",
+      "id": null,
+      "phoneNumber": "9876543210"
+    },
+    "involvedUser": [
+      {
+        "SplitAmout": 1000,
+        "payed_by": {"$oid": "69863510fd3f7a8a0171e846"},
+        "owedBy": {"$oid": "698612d8b39ff30610bcb119"},
+        "status": false,
+        "settled_date": null
+      }
+    ],
+    "_class": "org.example.splitpalbackendv2.Model.transactionModel"
+  },
+  {
+    "group_id": {"$oid": "6986155bb39ff30610bcb11c"},
+    "userID": {"$oid": "698612d8b39ff30610bcb119"},
+    "amount": 100,
+    "transaction_created_at": {"$date": "2026-02-06T21:00:00.000Z"},
+    "description": "Snacks reimbursement",
+    "to": {
+      "name": "kumar",
+      "id": {"$oid": "69863510fd3f7a8a0171e846"},
+      "phoneNumber": "8854859639"
+    },
+    "involvedUser": [],
+    "_class": "org.example.splitpalbackendv2.Model.transactionModel"
+  },
+  {
+    "group_id": {"$oid": "6986155bb39ff30610bcb11c"},
+    "userID": {"$oid": "69863510fd3f7a8a0171e846"},
+    "amount": 400,
+    "transaction_created_at": {"$date": "2026-02-07T10:00:00.000Z"},
+    "description": "Cab to airport",
+    "to": {
+      "name": "Uber",
+      "id": null,
+      "phoneNumber": "0000000000"
+    },
+    "involvedUser": [
+      {
+        "SplitAmout": 200,
+        "payed_by": {"$oid": "69863510fd3f7a8a0171e846"},
+        "owedBy": {"$oid": "698612d8b39ff30610bcb119"},
+        "status": false,
+        "settled_date": null
+      }
+    ],
+    "_class": "org.example.splitpalbackendv2.Model.transactionModel"
+  }
+]
